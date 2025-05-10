@@ -39,7 +39,7 @@ cmd="accelerate launch --config_file $ACCELERATE_CONFIG_FILE --gpu_ids $GPU_IDS 
   --mask_column $MASK_COLUMN \
   --height_buckets 480 \
   --width_buckets 720 \
-  --frame_buckets 49 \
+  --frame_buckets 25 \
   --dataloader_num_workers 8 \
   --pin_memory \
   --validation_prompt \"a man is packing his bike in the house\" \
@@ -54,7 +54,7 @@ cmd="accelerate launch --config_file $ACCELERATE_CONFIG_FILE --gpu_ids $GPU_IDS 
   --lora_alpha 64 \
   --mixed_precision bf16 \
   --output_dir $output_dir \
-  --max_num_frames 49 \
+  --max_num_frames 25 \
   --train_batch_size 1 \
   --max_train_steps $steps \
   --checkpointing_steps 400 \
