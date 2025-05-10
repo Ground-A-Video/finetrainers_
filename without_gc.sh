@@ -46,6 +46,7 @@ cmd="accelerate launch --config_file $ACCELERATE_CONFIG_FILE --gpu_ids $GPU_IDS 
   --validation_images_dir \"inpainted\"
   --validation_prompt_separator ::: \
   --num_validation_videos 1 \
+  --validarion_dir . \
   --validation_steps 50 \
   --validation_after_step 149 \
   --seed 42 \
