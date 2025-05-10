@@ -37,7 +37,7 @@ parallel_cmd=(
 # Model arguments
 model_cmd=(
   --model_name "cogvideox"
-  --pretrained_model_name_or_path "THUDM/CogVideoX-5b-I2V"
+  --pretrained_model_name_or_path "/workspace/hyeonho/CogVideoX-5b-I2V"
 )
 
 # Dataset arguments
