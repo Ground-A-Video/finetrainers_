@@ -37,8 +37,8 @@ cmd="accelerate launch --config_file $ACCELERATE_CONFIG_FILE --gpu_ids $GPU_IDS 
   --caption_column $CAPTION_COLUMN \
   --video_column $VIDEO_COLUMN \
   --mask_column $MASK_COLUMN \
-  --height_buckets 480 \
-  --width_buckets 720 \
+  --height_buckets 400 \
+  --width_buckets 640 \
   --frame_buckets 49 \
   --dataloader_num_workers 8 \
   --pin_memory \
@@ -50,8 +50,8 @@ cmd="accelerate launch --config_file $ACCELERATE_CONFIG_FILE --gpu_ids $GPU_IDS 
   --validation_steps 50 \
   --validation_after_step 149 \
   --seed 42 \
-  --rank 128 \
-  --lora_alpha 128 \
+  --rank 16 \
+  --lora_alpha 16 \
   --mixed_precision bf16 \
   --output_dir $output_dir \
   --max_num_frames 49 \
@@ -59,7 +59,6 @@ cmd="accelerate launch --config_file $ACCELERATE_CONFIG_FILE --gpu_ids $GPU_IDS 
   --max_train_steps $steps \
   --checkpointing_steps 400 \
   --gradient_accumulation_steps 1 \
-  --gradient_checkpointing \
   --learning_rate $learning_rate \
   --lr_scheduler $lr_schedule \
   --lr_warmup_steps 0 \

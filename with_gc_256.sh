@@ -58,6 +58,7 @@ cmd="accelerate launch --config_file $ACCELERATE_CONFIG_FILE --gpu_ids $GPU_IDS 
   --train_batch_size 1 \
   --max_train_steps $steps \
   --checkpointing_steps 400 \
+  --gradient_checkpointing \
   --gradient_accumulation_steps 1 \
   --learning_rate $learning_rate \
   --lr_scheduler $lr_schedule \
