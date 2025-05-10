@@ -32,7 +32,7 @@ MASK_COLUMN="masks.txt"
 output_dir="results_camco/bike-packing_0_48_1"
 
 cmd="accelerate launch --config_file $ACCELERATE_CONFIG_FILE --gpu_ids $GPU_IDS training/cogvideox/cogvideox_image_to_video_lora_camco.py \
-  --pretrained_model_name_or_path THUDM/CogVideoX-5b-I2V \
+  --pretrained_model_name_or_path /workspace/hyeonho/CogVideoX-5b-I2V \
   --data_root $DATA_ROOT \
   --caption_column $CAPTION_COLUMN \
   --video_column $VIDEO_COLUMN \
