@@ -1004,14 +1004,15 @@ def main(args):
                     weights = weights.unsqueeze(-1)
 
                 target = video_latents  # shape: [1, 13, 16, 60, 90] ~ [b, f, c, h, w]
-                if visibility_mask is None:
-                    visibility_mask = torch.ones_like(target)
-                else:
-                    visibility_mask = torch.nn.functional.interpolate(
-                        visibility_mask[0], size=(target.shape[-2], target.shape[-1]), mode="nearest"
-                    ).unsqueeze(0)
-                    visibility_mask = repeat(visibility_mask, 'b f c h w -> b f (repeat c) h w', repeat=target.shape[-3]).float()
-                    visibility_mask = compress_masks(visibility_mask, group_size=4) # temporally downsample binary masks using 'AND' operation
+                # if visibility_mask is None:
+                #     visibility_mask = torch.ones_like(target)
+                # else:
+                #     visibility_mask = torch.nn.functional.interpolate(
+                #         visibility_mask[0], size=(target.shape[-2], target.shape[-1]), mode="nearest"
+                #     ).unsqueeze(0)
+                #     visibility_mask = repeat(visibility_mask, 'b f c h w -> b f (repeat c) h w', repeat=target.shape[-3]).float()
+                #     visibility_mask = compress_masks(visibility_mask, group_size=4) # temporally downsample binary masks using 'AND' operation
+                visibility_mask = torch.ones_like(target)
 
                 loss = torch.mean(
                     (weights * (visibility_mask * (model_pred - target)) ** 2).reshape(batch_size, -1),
