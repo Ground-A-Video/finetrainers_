@@ -153,7 +153,7 @@ def _get_validation_args(parser: argparse.ArgumentParser) -> None:
     parser.add_argument(
         "--validation_dir",
         type=str,
-        required=True,
+        required=False,
         help="path to the validation input images",
     )
     parser.add_argument(
