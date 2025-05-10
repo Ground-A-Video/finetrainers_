@@ -107,7 +107,7 @@ validation_cmd=(
 # Miscellaneous arguments
 miscellaneous_cmd=(
   --tracker_name "finetrainers-cogvideox"
-  --output_dir "/raid/aryan/cogvideox"
+  --output_dir "."
   --init_timeout 600
   --nccl_timeout 600
   --report_to "wandb"
